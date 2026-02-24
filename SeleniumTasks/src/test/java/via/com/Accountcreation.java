@@ -29,6 +29,7 @@ public class Accountcreation {
 		// click on console output ,execution will resume
 
 		driver.findElement(By.xpath("//input[@value='VERIFY OTP']")).click();
+		//we cannot verify otp with automation manually need to enter from email
 
 	}
 
