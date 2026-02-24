@@ -35,7 +35,7 @@ public class SigninAndBookingflight {
 		Thread.sleep(2000);
 		driver.findElement(By.id("destination")).sendKeys(Keys.ARROW_DOWN);
 		driver.findElement(By.id("destination")).sendKeys(Keys.ENTER);
-		WebElement departuredate = driver.findElement(By.xpath("//span[text()='Feb']/../../..//div[@data-date='23']"));
+		WebElement departuredate = driver.findElement(By.xpath("//span[text()='Feb']/../../..//div[@data-date='24']"));
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", departuredate);
 		driver.findElement(By.xpath("//div[contains(@class,'element return')]")).click();
