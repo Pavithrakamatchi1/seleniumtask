@@ -12,9 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class FetchproductWithMentionedPrice {
+public class FetchProductwithMentionedPrice2Test {
 	@Test
-	public void fetchnamewithprice() {
+	public void fetchnamewithpriceTest() {
 		WebDriver driver = new ChromeDriver();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -23,14 +23,17 @@ public class FetchproductWithMentionedPrice {
 		driver.get("https://www.amazon.in/");
 		WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
 		searchBox.sendKeys("Samsung mobiles", Keys.ENTER);
-		
-		List<WebElement> products = driver.findElements(By.xpath("//div[@data-component-type='s-search-result']"));
-		for (WebElement product : products) {
-			String price = product.findElement(By.xpath(".//span[@class='a-price-whole']")).getText();
-			if (price.equals("7,499")) {
-				String name = product.findElement(By.xpath(".//a/h2/span")).getText();
-				System.out.println("Mobile with ₹7,499: " + name);
-			}	
-		}
-	}
+		List<WebElement> products = driver.findElements(By.xpath(
+			    "//div[@data-component-type='s-search-result']" +
+			    "[.//span[@class='a-price-whole' and number(translate(text(),'₹,',''))>9999]]"));
+
+			for (WebElement product : products) {
+
+			    String name = product.findElement(By.xpath(".//a//h2//span")).getText();
+
+			    String price = product.findElement(By.xpath(".//span[@class='a-price-whole']")).getText();
+
+			    System.out.println(name + "  ₹" + price);
+			}
+}
 }

@@ -6,10 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class CheckElementisDisplayedorNot {
+public class CheckElementisDisplayedorNotTest {
 	@Test
 
-	public void HideAndShow() throws Throwable {
+	public void HideAndShowTest() throws Throwable {
 
 		WebDriver driver = new ChromeDriver();
 

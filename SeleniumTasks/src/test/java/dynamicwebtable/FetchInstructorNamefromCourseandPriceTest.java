@@ -1,15 +1,14 @@
 package dynamicwebtable;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class FetchPriceusingCourse {
+public class FetchInstructorNamefromCourseandPriceTest {
 	@Test
 
-	public void Fetch_Price_using_cousename() throws Throwable {
+	public void Fetch_Instructorname_using_cousenameandPrice() throws Throwable {
 
 		WebDriver driver = new ChromeDriver();
 
@@ -17,7 +16,8 @@ public class FetchPriceusingCourse {
 
 		driver.get("https://rahulshettyacademy.com/AutomationPractice/");
 		
-		System.out.println(driver.findElement(By.xpath("//td[contains(text(),'Selenium Webdriver')]/following-sibling::td")).getText());
+		System.out.println(driver.findElement(By.xpath(" //tr[td[contains(text(),'Selenium Webdriver') ]and td[text()='30']]/td[1]")).getText());
+		}
 }
-}
-//output:30
+
+//output: Rahul Shetty

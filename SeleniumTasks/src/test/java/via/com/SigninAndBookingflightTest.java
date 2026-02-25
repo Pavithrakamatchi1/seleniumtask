@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class SigninAndBookingflight {
+public class SigninAndBookingflightTest {
 	@Test
 
 	public void signup() throws IOException, InterruptedException {

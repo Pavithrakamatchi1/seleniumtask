@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class FetchTable {
+public class FetchTableTest {
 	@Test
 
 	public void Fetch_all() throws Throwable {

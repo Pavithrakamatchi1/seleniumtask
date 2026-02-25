@@ -12,12 +12,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
-public class FetchAllProductsname {
-
+public class Fetch1stProductprizeAndNameOnlyTest {
 	@Test
-
-	public void Fetch_All_ProductsName_With_Samsung() throws Throwable {
-
+	public void prizeandname() {
 		WebDriver driver = new ChromeDriver();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
@@ -25,18 +22,12 @@ public class FetchAllProductsname {
 
 		driver.get("https://www.amazon.in/");
 		WebElement searchBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("twotabsearchtextbox")));
-
 		searchBox.sendKeys("Samsung mobiles", Keys.ENTER);
+		List<WebElement> names = driver.findElements(By.xpath("//a/h2/span"));
+		System.out.println(names.get(0).getText());
+		List<WebElement> prices = driver.findElements(By.xpath("//span[@class='a-price-whole']"));
+		System.out.println(prices.get(0).getText());
 
-			List<WebElement> names = driver
-					.findElements(By.xpath("//div[@data-component-type='s-search-result']//a/h2/span"));
-
-
-			for (WebElement e : names) {
-				System.out.println(e.getText());
-			}
-			
-		driver.quit();
-		
 	}
+
 }
